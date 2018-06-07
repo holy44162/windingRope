@@ -9,6 +9,8 @@
 import sensor, image, pyb, time
 import uos
 
+# print("branch test.")
+
 record_time = 10000 # 10 seconds in milliseconds
 
 sensor.reset()
