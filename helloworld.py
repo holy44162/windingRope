@@ -18,11 +18,11 @@ for i in curDir:
     if i[1] == 0x8000:
         fileName = i[0]
         #print(fileName[0:5])
-        if fileName[0:6] == 'stream':
-            if int(fileName[6:-4]) >= iMax:
-                iMax = int(fileName[6:-4]) + 1
+        if fileName[0:3] == 'img':
+            if int(fileName[3:-4]) >= iMax:
+                iMax = int(fileName[3:-4]) + 1
 
-streamFileName = 'stream' + str(iMax) + '.bin'
+streamFileName = 'img' + str(iMax) + '.bin'
 print(streamFileName)
 
 while(True):

@@ -11,7 +11,7 @@ import uos
 
 # print("branch test.")
 
-record_time = 10000 # 10 seconds in milliseconds
+record_time = 20000 # 20 seconds in milliseconds
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
@@ -28,9 +28,9 @@ for i in curDir:
     if i[1] == 0x8000:
         fileName = i[0]
         #print(fileName[0:5])
-        if fileName[0:6] == tagFileName:
-            if int(fileName[6:-4]) >= iMax:
-                iMax = int(fileName[6:-4]) + 1
+        if fileName[0:3] == tagFileName:
+            if int(fileName[3:-4]) >= iMax:
+                iMax = int(fileName[3:-4]) + 1
 
 streamFileName = tagFileName + str(iMax) + '.bin'
 
@@ -62,9 +62,9 @@ while pyb.elapsed_millis(start) < record_time:
         for j in imgDir:
             if j[1] == 0x8000:
                 imgFileName = j[0]
-                if imgFileName[0:6] == tagFileName:
-                    if int(imgFileName[6:-4]) >= jMax:
-                        jMax = int(imgFileName[6:-4]) + 1
+                if imgFileName[0:3] == tagFileName:
+                    if int(imgFileName[3:-4]) >= jMax:
+                        jMax = int(imgFileName[3:-4]) + 1
 
         streamImgName = '/imgs/' + tagFileName + str(jMax) + '.bmp'
         try:
