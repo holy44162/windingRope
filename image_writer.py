@@ -23,7 +23,7 @@ clock = time.clock()
 
 curDir = uos.ilistdir()
 iMax = 0
-tagFileName = 'stream'
+tagFileName = 'img'
 for i in curDir:
     if i[1] == 0x8000:
         fileName = i[0]
