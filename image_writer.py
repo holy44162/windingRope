@@ -57,7 +57,7 @@ while pyb.elapsed_millis(start) < record_time:
 
     img_writer.add_frame(img)
     # print(clock.fps())
-    if (tag % 20) == 0:
+    if (tag % 1) == 0:
         imgDir = uos.ilistdir("/imgs")
         for j in imgDir:
             if j[1] == 0x8000:
