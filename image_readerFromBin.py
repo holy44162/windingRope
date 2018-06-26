@@ -23,12 +23,13 @@ try:
 except OSError:
     print("path '/binImgs' already existed.")
 
-imgDir = uos.ilistdir("/binImgs")
 jMax = 0
+tagFileName = 'img'
 while(True):
     clock.tick()
     img = sensor.snapshot() if snapshot_source else img_reader.next_frame(copy_to_fb=True, loop=True)
     # Do machine vision algorithms on the image here.
+    imgDir = uos.ilistdir("/binImgs")
     for j in imgDir:
         if j[1] == 0x8000:
             imgFileName = j[0]
