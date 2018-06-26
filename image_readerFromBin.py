@@ -6,6 +6,7 @@
 # OpenMV Cam saw saved by the Image Writer object for testing machine vision algorithms.
 
 import sensor, image, time
+import uos
 
 snapshot_source = False # Set to true once finished to pull data from sensor.
 
@@ -27,7 +28,7 @@ jMax = 0
 tagFileName = 'img'
 while(True):
     clock.tick()
-    img = sensor.snapshot() if snapshot_source else img_reader.next_frame(copy_to_fb=True, loop=True)
+    img = sensor.snapshot() if snapshot_source else img_reader.next_frame(copy_to_fb=True, loop=False)
     # Do machine vision algorithms on the image here.
     imgDir = uos.ilistdir("/binImgs")
     for j in imgDir:
