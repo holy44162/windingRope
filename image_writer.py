@@ -11,7 +11,7 @@ import uos
 
 # print("branch test.")
 
-record_time = 20000 # 20 seconds in milliseconds
+record_time = 50000 # 50 seconds in milliseconds
 
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
